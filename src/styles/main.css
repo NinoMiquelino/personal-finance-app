@@ -1,0 +1,73 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8fafc;
+}
+
+.nav-btn {
+  @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition;
+}
+
+.nav-btn.active {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.transaction-form input,
+.transaction-form select {
+  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.dashboard-card {
+  @apply bg-white rounded-lg shadow-md p-6 border-l-4;
+}
+
+/* Animações */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading states */
+.loading {
+  @apply opacity-50 pointer-events-none;
+}
+
+/* Notificações */
+.notification {
+  @apply fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transform transition-transform duration-300;
+}
+
+.notification.success {
+  @apply bg-green-500 text-white;
+}
+
+.notification.error {
+  @apply bg-red-500 text-white;
+}
+
+.notification.hidden {
+  transform: translateX(100%);
+}
